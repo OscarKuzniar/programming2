@@ -1,8 +1,8 @@
 package order;
 
-public class MailService {
+public class MailService implements InformationService {
 
-    public void sendEmail(User user) {
+    public void inform(User user) {
         System.out.println("email has been sent!");
     }
 }
