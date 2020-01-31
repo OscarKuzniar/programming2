@@ -1,4 +1,7 @@
-import order.*;
+import order.Address;
+import order.PizzaOrderService;
+import order.Product;
+import order.User;
 
 public class OrderApplication {
 
@@ -7,12 +10,12 @@ public class OrderApplication {
         Product product = new Product("Pollo");
         Address address = new Address("Słowackiego", "24", "35-001");
 
-        OrderProcessor orderProcessor = new OrderProcessor(
-                new MailService(),
-                new PizzaOrderService(),
-                new PizzaOrderRepository()
-        );
+        PizzaOrderService pizzaOrderService = new PizzaOrderService();
 
-        orderProcessor.process(address, product, user);
+        boolean isOrderProcessed = pizzaOrderService.order(address, product, user);
+
+        if (isOrderProcessed) {
+            //logic
+        }
     }
 }
