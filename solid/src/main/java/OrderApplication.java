@@ -1,7 +1,4 @@
-import order.Address;
-import order.PizzaOrderService;
-import order.Product;
-import order.User;
+import order.*;
 
 public class OrderApplication {
 
@@ -14,8 +11,14 @@ public class OrderApplication {
 
         boolean isOrderProcessed = pizzaOrderService.order(address, product, user);
 
+        MailService mailService = new MailService();
+        PizzaOrderRepository pizzaOrderRepository = new PizzaOrderRepository();
+
         if (isOrderProcessed) {
-            //logic
+            mailService.sendEmail(user);
+            pizzaOrderRepository.createPizzaOrder(address, product, user);
+        } else {
+            throw new OrderNotProcessedException();
         }
     }
 }
