@@ -12,6 +12,7 @@
     <modules>
         <module>tdd</module>
         <module>example</module>
+        <module>solid</module>
     </modules>
 
     <build>
