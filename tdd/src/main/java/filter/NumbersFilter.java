@@ -9,9 +9,9 @@ public class NumbersFilter {
 
     public List<Integer> getOdd(List<Integer> numbers) {
         List<Integer> oddNumbers = new ArrayList<>();
-        for (int i = 0; i <numbers.size(); i++) {
-            if (numbers.get(i) % 2 != 0) {
-                oddNumbers.add(numbers.get(i));
+        for (Integer number : numbers) {
+            if (number % 2 != 0) {
+                oddNumbers.add(number);
             }
         }
         return oddNumbers;
