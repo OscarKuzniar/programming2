@@ -23,4 +23,10 @@ solid1 - mockup\
 solid2 - logic addition\
 solid3 - refactor according to solid principles, processor added
 ***
-solid-examples - examples of every piece of solid principle
+solid-examples - examples of every piece of solid principle\
+***
+To clone all branches locally run in bash:\
+
+```chmod +x cloneBranchesLocally.sh    
+sh cloneBranchesLocally.sh
+```
