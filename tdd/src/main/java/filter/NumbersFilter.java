@@ -3,18 +3,15 @@ package filter;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class NumbersFilter {
 
 
     public List<Integer> getOdd(List<Integer> numbers) {
-        List<Integer> oddNumbers = new ArrayList<>();
-        for (Integer number : numbers) {
-            if (number % 2 != 0) {
-                oddNumbers.add(number);
-            }
-        }
-        return oddNumbers;
+        return numbers.stream()
+                .filter(e -> e % 2 != 0)
+                .collect(Collectors.toList());
     }
 
     public List<Integer> getEven(List<Integer> numbers) {
