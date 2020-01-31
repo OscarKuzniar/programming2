@@ -39,7 +39,10 @@ public class FilterTestSuite {
     public void testFilterReturnEvenNumbers() {
         //Given
         NumbersFilter filter = new NumbersFilter();
-        List<Integer> numberList = List.of(0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
+        List<Integer> numberList = new ArrayList<>();
+        for (int i = 0; i <= 9; i++) {
+            numberList.add(i);
+        }
 
         //When
         List<Integer> filteredList = filter.getEven(numberList);
