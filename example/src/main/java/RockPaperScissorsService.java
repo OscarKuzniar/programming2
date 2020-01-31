@@ -1,36 +1,30 @@
 public class RockPaperScissorsService {
-    private Game gam;
-    public RockPaperScissorsService(Game game){
-    this.gam = game;}
 
-            //setups game
-    public Object setupGame()
-    {       /**
-            * checks game difficulty level;
-            */
-        if(gam.gameType == "hard") return new HardGame();
+    private Game game;
 
+    public RockPaperScissorsService(Game game) {
+        this.game = game;
+    }
 
-        else if
-            (gam.getType() == "EASY")
-            {
-                return new EasyGame();
-            }
+    public Object setupGame() {
+        if (game.gameType.equals("hard")) {
+            return new HardGame();
+        } else if (game.getGameType().equals("EASY")) {
+            return new EasyGame();
+        }
+        return null;
+    }
 
-
-
-        return null; }
-
-    class Game{
+    class Game {
 
         String gameType;
 
-        public  Game (String type) {
-            gameType = type;
+        public Game(String gameType) {
+            this.gameType = gameType;
         }
 
-        public String getType(){
-            return gameType;
+        public String getGameType() {
+            return this.gameType;
         }
     }
 }
