@@ -1,2 +1,2 @@
-public class EasyGame {
+public class EasyGame implements GameMode {
 }

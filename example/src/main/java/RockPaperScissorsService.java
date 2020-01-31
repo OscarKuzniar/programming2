@@ -2,29 +2,16 @@ public class RockPaperScissorsService {
 
     private Game game;
 
+    private static final String HARD_GAME_MODE = "HARD";
+
     public RockPaperScissorsService(Game game) {
         this.game = game;
     }
 
-    public Object setupGame() {
-        if (game.gameType.equals("hard")) {
+    public GameMode setupGame() {
+        if (game.getGameType().equals(HARD_GAME_MODE)) {
             return new HardGame();
-        } else if (game.getGameType().equals("EASY")) {
-            return new EasyGame();
         }
-        return null;
-    }
-
-    class Game {
-
-        String gameType;
-
-        public Game(String gameType) {
-            this.gameType = gameType;
-        }
-
-        public String getGameType() {
-            return this.gameType;
-        }
+        return new EasyGame();
     }
 }
