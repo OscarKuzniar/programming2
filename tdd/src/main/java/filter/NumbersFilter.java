@@ -15,6 +15,9 @@ public class NumbersFilter {
     }
 
     public List<Integer> getEven(List<Integer> numbers) {
+        if(numbers.contains(0)) {
+            numbers.remove(0);
+        }
         numbers.removeAll(getOdd(numbers));
         return numbers;
     }
