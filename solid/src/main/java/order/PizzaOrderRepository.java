@@ -1,8 +1,8 @@
 package order;
 
-public class PizzaOrderRepository implements OrderRepository {
+public class PizzaOrderRepository {
 
-    public void createOrder(Address address, Product product, User user) {
+    public void createPizzaOrder(Address address, Product product, User user) {
         //Here should be logic for saving an order
         System.out.println("Order has been saved!");
     }

@@ -1,6 +1,6 @@
 package order;
 
-public class PizzaOrderService implements OrderService {
+public class PizzaOrderService {
 
     public boolean order(Address address, Product product, User user) {
         System.out.println("Request sent from: " + user.getEmail());
