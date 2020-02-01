@@ -1,12 +1,19 @@
 package srp;
 
+import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
+
 public class Post {
 
-    String msg;
+    private String msg;
 
-    String author;
+    private String author;
 
-    String date;
+    private String date;
+
+    public Post(String msg) {
+        this.msg = msg;
+    }
 
     public String getMsg() {
         return msg;
@@ -18,5 +25,11 @@ public class Post {
 
     public void setDate(String date) {
         this.date = date;
+    }
+
+    public void setTruncatedDate() {
+        LocalDateTime createdAt = LocalDateTime.now();
+        createdAt = createdAt.truncatedTo(ChronoUnit.MINUTES);
+        this.setDate(createdAt.toString());
     }
 }
