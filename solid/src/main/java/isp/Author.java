@@ -1,10 +1,12 @@
 package isp;
 
-public class Author implements Entity {
+public class Author implements Entity, Person {
 
     private Long id;
 
     private String name;
+
+    private String lastName;
 
     @Override
     public Long getId() {
@@ -14,5 +16,10 @@ public class Author implements Entity {
     @Override
     public String getName() {
         return this.name;
+    }
+
+    @Override
+    public String getLastName() {
+        return this.lastName;
     }
 }

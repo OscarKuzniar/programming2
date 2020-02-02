@@ -4,16 +4,11 @@ public class Book implements Entity {
 
     private Long id;
 
-    private String name;
+    private String title;
 
     @Override
     public Long getId() {
         return this.id;
-    }
-
-    @Override
-    public String getName() {
-        return this.name;
     }
 
 }
