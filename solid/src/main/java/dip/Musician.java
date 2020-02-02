@@ -1,6 +1,6 @@
 package dip;
 
-public interface Musican {
+public interface Musician {
 
     void play();
 }

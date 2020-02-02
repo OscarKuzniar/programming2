@@ -1,8 +1,8 @@
 package dip;
 
-public class Guitarist {
+public class Guitarist implements Musician {
 
-    public void playGuitar() {
+    public void play() {
         System.out.println("playing guitar");
     }
 }

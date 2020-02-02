@@ -1,14 +1,17 @@
 package dip;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Band {
 
-    private Guitarist guitarist = new Guitarist();
-    private Drummer drummer = new Drummer();
-    private Bassist bassist = new Bassist();
+    private List<Musician> musicians = new ArrayList<>();
+
+    public Band(List<Musician> musicians) {
+        this.musicians = musicians;
+    }
 
     public void perform() {
-        drummer.playDrums();
-        guitarist.playGuitar();
-        bassist.playBase();
+        this.musicians.forEach(Musician::play);
     }
 }
