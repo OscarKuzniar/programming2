@@ -1,8 +1,13 @@
 package ocp;
 
-public class Rectangle {
+public class Rectangle implements Shape {
 
     private double height;
+
+    @Override
+    public double getArea() {
+        return this.width * this.height;
+    }
 
     private double width;
 
