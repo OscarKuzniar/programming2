@@ -1,7 +1,4 @@
-import order.Address;
-import order.PizzaOrderService;
-import order.Product;
-import order.User;
+import order.*;
 
 public class OrderApplication {
 
@@ -10,12 +7,14 @@ public class OrderApplication {
         Product product = new Product("Pollo");
         Address address = new Address("Słowackiego", "24", "35-001");
 
-        PizzaOrderService pizzaOrderService = new PizzaOrderService();
+        OrderDTO orderDTO = new OrderDTO(address, product, user);
 
-        boolean isOrderProcessed = pizzaOrderService.order(address, product, user);
+        OrderProcessor orderProcessor = new OrderProcessor(
+                new PizzaOrderService(),
+                new PizzaOrderRepository(),
+                new MailService()
+        );
 
-        if (isOrderProcessed) {
-            //logic
-        }
+        orderProcessor.process(orderDTO);
     }
 }

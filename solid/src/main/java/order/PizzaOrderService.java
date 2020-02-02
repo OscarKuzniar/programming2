@@ -1,13 +1,14 @@
 package order;
 
-public class PizzaOrderService {
+public class PizzaOrderService implements OrderService {
 
-    public boolean order(Address address, Product product, User user) {
-        System.out.println("Request sent from: " + user.getEmail());
-        System.out.println("by " + user.getEmail());
-        System.out.println("Ordering pizza " + product.getName() + " on address " +
-                address.getStreet() + " " + address.getStreetNumber()
-                + ((address.getLocalNumber() != null) ? ("/" + address.getLocalNumber() + " ") : " "));
+    @Override
+    public boolean order(OrderDTO orderDTO) {
+        System.out.println("Request sent from: " + orderDTO.getUser().getEmail());
+        System.out.println("by " + orderDTO.getUser().getEmail());
+        System.out.println("Ordering pizza " + orderDTO.getProduct().getName() + " on address " +
+                orderDTO.getAddress().getStreet() + " " + orderDTO.getAddress().getStreetNumber()
+                + ((orderDTO.getAddress().getLocalNumber() != null) ? ("/" + orderDTO.getAddress().getLocalNumber() + " ") : " "));
         return true;
     }
 }
